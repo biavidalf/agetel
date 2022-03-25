@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | {{super()}} {% endblock %}
+
+{% block content %}
+
+
+    <div class="container bootstrap snippets bootdey">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body p-t-0">
+
+                          <div class="search-container">
+                            <form action="" method="POST" enctype="multipart/form-data">
+                            {{ form.csrf_token }}
+
+                               {{ form.busca(type="text", placeholder="Buscar") }}
+
+                              <button type="submit"><i class="fa fa-search"></i></button>
+
+                            </form>
+                          </div>
+
+                          <div class="filtro-container">
+                              <form action="" method="POST" enctype="multipart/form-data">
+                                {{ form.csrf_token }}
+
+                                {{ form_gp.grupo(class="form-filtro-container") }}
+
+                              <button type="submit"><i class="fa fa-filter"></i></button>
+
+                            </form>
+                          </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+           {% if messages %}
+              {% for category, message in messages %}
+                 <div class="alert {{ category }}"> {{ message|capitalize }} </div>
+              {% endfor %}
+           {% endif %}
+        {% endwith %}
+
+        <div class="row">
+            {% for contato in contatos %}
+            <div class="col-sm-6">
+                <div class="panel">
+                    <div class="panel-body p-t-10">
+                        <div class="media-main">
+                            <a class="pull-left" href="{{ url_for('ver_contato', idc=contato.id) }}">
+                                <img class="thumb-lg img-circle bx-s" src="{{ contato.image }}" alt="">
+                            </a>
+                            <div class="pull-right btn-group-sm">
+                                <a href="{{ url_for('att_contato', idc=contato.id) }}" class="btn btn-success tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Editar">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a href="{{ url_for('deletar_contato', idc=contato.id) }}" class="btn btn-danger tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Deletar">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                            <div class="info">
+                                <a href="{{ url_for('ver_contato', idc=contato.id) }}"><h4> {{ contato.nome }}</h4></a>
+                                <p class="text-muted">Número de Telefone: {{ contato.telefone }}</p>
+                                <p class="text-muted">E-mail: {{ contato.email }}</p>
+                                <p class="text-muted">Cidade: {{ contato.cidade }}</p>
+                                <p class="text-muted">Profissão: {{ contato.profissao }}</p>
+                                <p class="text-muted">Grupo: {{ contato.grupo.nome }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Adicionar | {{super()}} {% endblock %}
+
+{% block content %}
+  <form style="margin: 20px auto" action="" method="POST" class="divform" enctype="multipart/form-data">
+      {{ form.csrf_token }}
+
+    <h2 class="titulo">Adicionar Contato</h2>
+      <label>Nome</label>
+      {{
+        form.nome(class="campotexto")
+      }}
+
+      <label>Profissão</label>
+      {{
+        form.profissao(class="campotexto")
+      }}
+
+      <label>Email</label>
+      {{
+        form.email(class="campotexto")
+      }}
+
+      <label>Telefone</label>
+      {{
+        form.telefone(class="campotexto")
+      }}
+
+      <label>Cidade</label>
+      {{
+        form.cidade(class="campotexto")
+      }}
+      <label>Foto</label>
+      {{
+        form.image(class="campotexto")
+      }}
+      <label>Grupo</label>
+
+      {{ form.grupo }}
+      <button class="botoes" type="submit">Adicionar</button>
+
+  </form>
+{% endblock %}

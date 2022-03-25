@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Agenda Telefônica Virtual{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<link href="../static/css/newcss.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- In-lining styles to avoid needing a separate .css file -->
+    <style>
+        hr { border-color: #cccccc; margin: 0; }
+        .no-margins { margin: 0px; }
+        .with-margins { margin: 10px; }
+        .col-centered { float: none; margin: 0 auto; }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+
+	<script src="https://kit.fontawesome.com/df07cb0f03.js" crossorigin="anonymous"></script>
+
+    {# *** Allow sub-templates to insert extra html to the head section *** #}
+    {% block extra_css %}{% endblock %}
+  </head>
+
+
+<body style="margin-top: 0px">
+    <header id="header"><!--header-->
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 clearfix">
+						<div class="shop-menu clearfix pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="{{ url_for('index') }}"><i class="fa fa-crosshairs"></i>Página Inicial</a></li>
+								{% if call_or_get(current_user.is_authenticated) %}
+									<li><a href="{{ url_for('user.logout') }}"><i class="fas fa-sign-out-alt"></i>{%trans%}Logout{%endtrans%}</a></li>
+								{% else %}
+									<li><a href="{{ url_for('user.login') }}"><i class="fas fa-lock"></i>Login</a></li>
+									<li><a href="{{ url_for('user.register') }}"><i class="fas fa-user"></i>Register</a></li>
+								{% endif %}
+                                <li><a href="{{ url_for('add_contato') }}"><i class="fas fa-user"></i>Adicionar Contato</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+		<div class="header-bottom"><!--header-bottom-->
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    {% block body %}
+<!--
+    <div id="header-div" class="clearfix with-margins">
+        <div class="pull-right">
+            {% if call_or_get(current_user.is_authenticated) %}
+                <a href="{{ url_for('user.edit_user_profile') }}">{{ current_user.username or current_user.email }}</a>
+                &nbsp; | &nbsp;
+                <a href="{{ url_for('user.logout') }}">{%trans%}Sign out{%endtrans%}</a>
+            {% else %}
+                <a href="{{ url_for('user.login') }}">{%trans%}Sign in{%endtrans%}</a>
+            {% endif %}
+        </div>
+    </div>
+-->
+    {% block menu %}
+    {% endblock %}
+
+    <div id="main-div" class="with-margins">
+    {# One-time system messages called Flash messages #}
+    {% block flash_messages %}
+        {%- with messages = get_flashed_messages(with_categories=true) -%}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category=='error' %}
+                        {% set category='danger' %}
+                    {% endif %}
+                    <div class="alert alert-{{category}}">{{ message|safe }}</div>
+                {% endfor %}
+            {% endif %}
+        {%- endwith %}
+    {% endblock %}
+
+    {% block main %}
+        {% block content %}{% endblock %}
+    {% endblock %}
+    </div>
+
+    <br/>
+
+    {% endblock %}
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    {# *** Allow sub-templates to insert extra html to the bottom of the body *** #}
+    {% block extra_js %}{% endblock %}
+
+  </body>
+</html>

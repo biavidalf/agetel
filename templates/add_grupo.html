@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Criar Grupo | {{super()}} {% endblock %}
+
+{% block content %}
+  <form style="margin: 20px auto" action="" method="POST" class="divform" enctype="multipart/form-data">
+      {{ form.csrf_token }}
+
+    <h2 class="titulo">Criar Grupo</h2>
+      <label>Nome</label>
+      {{
+        form.grupo(class="campotexto")
+      }}
+
+      <button class="botoes" type="submit">Criar</button>
+
+  </form>
+{% endblock %}

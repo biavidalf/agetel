@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Agenda Telefônica Virtual{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<script src="https://kit.fontawesome.com/df07cb0f03.js" crossorigin="anonymous"></script>
+
+	<link href="../static/css/newcss.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+</head>
+
+<body style="margin: 0 auto;">
+    <header id="header" style="margin: 0 auto;"><!--header-->
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 clearfix">
+						<div class="shop-menu clearfix pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="{{ url_for('index') }}"><i class="fa fa-crosshairs"></i>Página Inicial</a></li>
+								{% if call_or_get(current_user.is_authenticated) %}
+									<li><a href="{{ url_for('user.logout') }}"><i class="fas fa-sign-out-alt"></i>{%trans%}Logout{%endtrans%}</a></li>
+								{% else %}
+									<li><a href="{{ url_for('user.login') }}"><i class="fas fa-lock"></i>Login</a></li>
+									<li><a href="{{ url_for('user.register') }}"><i class="fas fa-user"></i>Register</a></li>
+								{% endif %}
+                                <li><a href="{{ url_for('add_contato') }}"><i class="fas fa-user"></i>Adicionar Contato</a></li>
+								<li><a href="{{ url_for('grupos') }}"><i class="fas fa-user"></i>Grupos</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+		<div class="header-bottom"><!--header-bottom-->
+
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    {% block content %}
+
+	{% endblock %}
+
+    <script type="text/javascript">
+    $(function(){
+     $("a[data-toggle='tooltip']").tooltip();
+    });
+
+    </script>
+</body>
+</html>

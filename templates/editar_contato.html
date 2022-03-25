@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar | {{super()}} {% endblock %}
+
+{% block content %}
+
+    <div class="individual-contact">
+                <div class="panel">
+                    <div class="panel-body p-t-10">
+
+                        <div class="media-main">
+                            <a class="pull-left" href="#">
+                                <img class="thumb-lg img-circle bx-s" src="{{ contato_atual.image }}" alt="">
+                            </a>
+                            <form action="" method="POST" enctype="multipart/form-data">
+                                {{ form.csrf_token }}
+                            <div class="pull-right btn-group-sm">
+                                <button type="submit" class="btn btn-success tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Salvar">
+                                    <i class="fa fa-save"></i>
+                                </button>
+                                <a href="{{ url_for('ver_contato', idc=contato_atual.id) }}" class="btn btn-danger tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Cancelar">
+                                    <i class="fa fa-close"></i>
+                                </a>
+                            </div>
+
+                                <div class="info">
+                                    <h4>{{ contato_atual.nome }}</h4>
+                                    <p class="text-muted">Nome: {{ contato_atual.nome }}</p>
+                                        {{ form.nome }}
+                                    <p class="text-muted">Telefone: {{ contato_atual.telefone }}</p>
+                                        {{ form.telefone }}
+                                    <p class="text-muted">E-mail: {{ contato_atual.email }}</p>
+                                        {{ form.email }}
+                                    <p class="text-muted">Cidade: {{ contato_atual.cidade }}</p>
+                                        {{ form.cidade }}
+                                    <p class="text-muted">Profissão: {{ contato_atual.profissao }}</p>
+                                        {{ form.profissao }}
+                                    <p class="text-muted">Grupo: </p>{{ form.grupo }}
+                                    <p class="text-muted">Foto: </p>{{ form.image }}
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+    </div>
+
+{% endblock %}

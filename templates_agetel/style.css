@@ -1,0 +1,368 @@
+/* 
+    ==============================================================
+                        CONFIGURAÇÕES GERAIS
+    ==============================================================
+*/
+/* Variáveis */
+:root{
+    --body-bg: #1F1F1F;
+    --nav-bg: #346751;
+    --lighter-bg: #4D4C4C;
+    --lighter-gray: #A5A4A4;
+    --orangee: #C84B31;
+    --font: 'Barlow Condensed', sans-serif;
+    }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--font);
+    background-color: var(--body-bg);
+}
+
+.menu {
+    visibility: hidden;
+    position: relative;
+    top: 75px;
+    right: 37px;
+    background-color: white;
+    width: 140px;
+    padding: 20px auto;
+}
+.menu ul{
+    list-style: none;
+    margin: 10px;
+}
+.menu ul button{
+    padding: 9px 10px;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    margin: 3px auto;
+}
+.menu a{
+    font-size: 0.9em;
+    margin: 0;
+}
+.menu ul button:hover{
+    background-color: #dfdfdf;
+}
+.menu hr{
+    border: 1px solid black;
+}
+.selecionado{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: -370px;
+}
+.selecionado + .menu:active,
+.selecionado:focus + .menu {
+    visibility: visible;
+}
+
+
+/* 
+    ==============================================================
+                                INDEX
+    ==============================================================
+*/
+
+/* ===== NAV BAR ===== */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    width: 100%;
+    background-color: var(--nav-bg);
+    color: white;
+    text-align: center;
+}
+nav a{
+    font-size: 27px;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    margin: 0 70px;
+}
+nav span{
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin-right: 50px;
+}
+
+/* ===== TITULO E FITLRO ===== */
+#main-content{
+    width: 70%;
+    margin: 20px auto;
+}
+#index .tit-filt{
+    border-bottom: 2px solid var(--orangee);
+    height: 7vh;
+}
+#index .tit-filt span{
+    float: left;
+    color: var(--orangee);
+    font-weight: 400;
+    font-size: 1.8em;
+    margin: 4px 35px;
+
+}
+#index .filtro select{
+    float: right;
+    height: 30px;
+    width: 130px;
+    padding: 0 10px;
+    font-size: 0.9em;
+    margin: 5px 0;
+    color: var(--lighter-bg);
+}
+#index .fa-filter{
+    float: right;
+    font-size: 1.6em;
+    color: var(--orangee);
+    margin: 5px 35px 5px 10px;
+    cursor: pointer;
+}
+#index .w-6{
+    float: right;
+    width: 30px;
+    color: var(--orangee);
+    margin: 5px 35px 5px 10px;
+    cursor: pointer;
+}
+
+/* ===== BARRA DE PESQUISA ===== */
+#index .pesquisa input[type="search"]{
+    width: 400px;
+    display: block;
+    height: 6vh;
+    margin: 25px auto;
+    border: none;
+    border-radius: 30px;
+    padding-left: 48px;
+    box-shadow: rgb(0, 0, 0) 0px 6px 15px;
+}
+#index .pesquisa input[type="search"]:focus{
+    outline: 2px solid var(--orangee);
+  }
+#index .pesquisa input::placeholder{
+    color: var(--lighter-bg);
+}
+#index .pesquisa .fa-magnifying-glass{
+    position: relative;
+    font-size: 1.4em;
+    color: var(--orangee);
+    left: 286px;
+    bottom: 54px;
+    cursor: pointer;
+}
+
+/* ===== LISTAGEM DE CONTATOS ===== */
+#contatos{
+    width: 85%;
+    margin: -18px auto 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+#contatos .contato{
+    background-color: white;
+    width: 40%;
+    height: 20vh;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: rgb(22, 22, 22) 0px 6px 15px;
+}
+#contatos img{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    display: inline;
+    float: left;
+    margin: 22px 6px 0 10px;
+}
+#contatos .name-edit-delete{  
+    display: inline;
+    float: left;
+    margin-top: 20px;
+    width: 70%;
+}
+#contatos .name-edit-delete span{
+    float: left;
+    color: var(--nav-bg);
+    font-weight: 600;
+    font-size: 1.5em;
+}
+#contatos .name-edit-delete a{
+    float: right;
+    color: var(--body-bg);
+    margin-right: 7px;
+    font-size: 1.2em;
+}
+#contatos ul.infos{
+    display: inline;
+    list-style: none;
+}
+#contatos li.infos{
+    margin-bottom: 2px;
+}
+#contatos .infos .fa-users{
+    margin-right: 6px;
+}
+#contatos .infos .fa-envelope, .fa-phone{
+    margin-right: 9px;
+}
+#contatos .infos .fa-solid{
+    margin-left: 1px;
+}
+#contatos .name-edit-delete .fa-solid:hover{
+    color: var(--nav-bg);
+}
+
+
+
+
+/* 
+    ==============================================================
+                            ADD CONTATO
+    ==============================================================
+*/
+#add-contato{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+#add-contato span.titulo, #criar-grupo span.titulo, #lista-grupos span.titulo{
+    display: block;
+    border-bottom: 2px solid var(--orangee);
+    height: 6vh;
+    text-align: center;
+    color: var(--orangee);
+    font-weight: 400;
+    font-size: 1.7em;
+    margin: -30px auto 25px auto;
+    width: 100%;
+}
+#add-contato .form-padrao{
+    width: 50%;
+    margin: 0 auto;
+    background-color: #4D4C4C;
+    padding: 20px 30px 18px 30px;
+    border-radius: 5px;
+    box-shadow: rgb(22, 22, 22) 0px 6px 15px;
+}
+#add-contato .form-padrao .input-text{
+    display: block;
+    margin: 15px auto;
+    padding: 12px 14px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #346751;
+    color: white;
+}
+#add-contato .form-padrao .input-text:focus{
+    outline: 2px solid var(--nav-bg);
+    border: none;
+    border-radius: 5px;
+}
+#add-contato .form-padrao .botao-form{
+    display: block;
+    margin: 20px auto 5px auto;
+    border: none;
+    background-color: transparent;
+    border: 2px solid #C84B31;
+    color: #C84B31;
+    padding: 13px 17px;
+    border-radius: 6px;
+}
+#add-contato .form-padrao .botao-form:hover{
+    color: white;
+    background-color: #C84B31;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#add-contato h3{
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+/* 
+    ==============================================================
+                            GRUPOS
+    ==============================================================
+*/
+/* ==== Criar grupos ==== */
+#criar-grupo, #lista-grupos{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+#criar-grupo .form-grupo{
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form-grupo .input-text{
+    background-color: white;
+    color: #1F1F1F;
+    padding: 15px 17px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.form-grupo .botao-form{
+    background-color: transparent;
+    color: var(--nav-bg);
+    border: 2px solid var(--nav-bg);
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+.form-grupo .botao-form:hover{
+    background-color: var(--nav-bg);
+    color: white;
+}
+
+/* ==== Listagem dos grupos ==== */
+#grupos{
+    width: 98%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.grupo{
+    width: 250px;
+    background-color: white;
+    color: black;
+    padding: 19px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-weight: 500;
+    margin-bottom: 35px;
+    font-size: 1.2em;
+}
+.grupo .fa-solid{
+    color: black;
+    margin-right: 7px;
+    font-size: 1.1em;
+}
+.grupo .fa-solid:hover{
+    color: #346751;
+}
