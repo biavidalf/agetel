@@ -1,6 +1,6 @@
 # Projeto Final de Engenharia de Software
 ###  Agenda de Contatos
-####  Equipe: Beatriz Vidal Freire, Evellyn Gisely de Castro, Nilton Luan Guedes Barros e Paulo Victor se Souza Rodrigues
+####  Equipe: Beatriz Vidal Freire, Evellyn Gisely de Castro, Nilton Luan Guedes Barros e Paulo Victor Souza Rodrigues
 
 *Table of Contents*
 
@@ -50,32 +50,40 @@ Versão: 1.57
 
 ###### Tela Login
 
-[![Tela Login](https://www.bing.com/images/blob?bcid=TroU6Dt2V.sCidLRRGHWI66YnLnQ.....74 "Tela Login")](http://https://www.bing.com/images/blob?bcid=TroU6Dt2V.sCidLRRGHWI66YnLnQ.....74 "Tela Login")
+[![Tela Login](imagens-readme/Telas-Login.png "Tela Login")](imagens-readme/Telas-Login.png "Tela Login")
 
 ######  Tela Registro
 
-[![Tela Registro](https://www.bing.com/images/blob?bcid=TjlztEZq2fsCidLRRGHWI66YnLnQ.....1s "Tela Registro")](http://https://www.bing.com/images/blob?bcid=TjlztEZq2fsCidLRRGHWI66YnLnQ.....1s "Tela Registro")
+[![Tela Registro](imagens-readme/Telas-Registro.png "Tela Registro")](imagens-readme/Telas-Registro.png "Tela Registro")
 
 ###### Tela Inicial (contatos)
 
-[![Tela Inicial](https://www.bing.com/images/blob?bcid=ToSizWSgJvsCidLRRGHWI66YnLnQ.....6c "Tela Inicial")](http://https://www.bing.com/images/blob?bcid=ToSizWSgJvsCidLRRGHWI66YnLnQ.....6c "Tela Inicial")
+[![Tela Inicial](imagens-readme/Telas-PáginaInicial.png "Tela Inicial")](imagens-readme/Telas-PáginaInicial.png "Tela Inicial")
 
 ###### Tela Edição de Contato
 
-[![Tela Edição de Contato](https://www.bing.com/images/blob?bcid=Tu.nWrjaQvsCqxcxoNWLuD9SqbotqVTdP0g "Tela Edição de Contato")](http://https://www.bing.com/images/blob?bcid=Tu.nWrjaQvsCqxcxoNWLuD9SqbotqVTdP0g "Tela Edição de Contato")
+[![Tela Edição de Contato](imagens-readme/Telas-EditarContatos.png "Tela Edição de Contato")](imagens-readme/Telas-EditarContatos.png "Tela Edição de Contato")
 
 ###### Tela Individual do Contato
 
-[![Tela Individual de um Contato](https://www.bing.com/images/blob?bcid=TkYnAseAz.sCidLRRGHWI66YnLnQ.....yU "Tela Individual de um Contato")](http://https://www.bing.com/images/blob?bcid=TkYnAseAz.sCidLRRGHWI66YnLnQ.....yU "Tela Individual de um Contato")
+[![Tela Individual de um Contato](imagens-readme/Telas-VerContato.png "Tela Individual de um Contato")](imagens-readme/Telas-VerContato.png "Tela Individual de um Contato")
 
 ###### Tela Adição de Contato
 
-[![Tela Adicionar um Contato](https://www.bing.com/images/blob?bcid=Tp7fRf9c0.sCqxcxoNWLuD9SqbotqVTdP6Q "Tela Adicionar um Contato")](http://https://www.bing.com/images/blob?bcid=Tp7fRf9c0.sCqxcxoNWLuD9SqbotqVTdP6Q "Tela Adicionar um Contato")
+[![Tela Adicionar um Contato](imagens-readme/Telas-AddContato.png "Tela Adicionar um Contato")](imagens-readme/Telas-AddContato.png "Tela Adicionar um Contato")
+
+###### Tela Mecanismo de Busca
+
+[![Tela Mecanismo de Busca](imagens-readme/Telas-MecanismodeBusca.png "Tela Mecanismo de Busca")](imagens-readme/Telas-MecanismodeBusca.png "Tela Mecanismo de Busca")
+
+###### Tela Filtro de Grupos
+
+[![Tela Filtro de Grupos](imagens-readme/Telas-FiltrodeGrupos.png "Tela Filtro de Grupos")](imagens-readme/Telas-FiltrodeGrupos.png "Tela Filtro de Grupos")
 
 ##### 3) UML:
 ###### a. Desenvolver os casos de uso do sistema.
 
-[![Casos de Uso do Sistema](https://www.bing.com/images/blob?bcid=TmmJgSzNjPsCidLRRGHWI66YnLnQ.....xs "Casos de Uso do Sistema")](https://www.bing.com/images/blob?bcid=TmmJgSzNjPsCidLRRGHWI66YnLnQ.....xs "Casos de Uso do Sistema")
+[![Casos de Uso do Sistema](imagens-readme/Diagrama%20de%20Caso%20de%20Uso.jpeg "Casos de Uso do Sistema")](imagens-readme/Diagrama%20de%20Caso%20de%20Uso.jpeg "Casos de Uso do Sistema")
 
 **_Caso de Uso - Agenda de Telefone_**
 
@@ -117,31 +125,31 @@ Versão: 1.57
 - [x] Registro de Usuário
 
 ###### Diagrama de Sequência -  Busca e Delete de um Contato
-[![Diagrama de Sequencia - Busca e Delete e um Contato](https://www.bing.com/images/blob?bcid=TlTnfZXSLvsCidLRRGHWI66YnLnQ.....-0 "Diagrama de Sequencia - Busca e Delete e um Contato")](http://https://www.bing.com/images/blob?bcid=TlTnfZXSLvsCidLRRGHWI66YnLnQ.....-0 "Diagrama de Sequencia - Busca e Delete e um Contato")
+[![Diagrama de Sequencia - Busca e Delete e um Contato](imagens-readme/Diagramas%20de%20Sequência%20-%20Busca%20e%20Delete%20de%20Contatos.jpeg "Diagrama de Sequencia - Busca e Delete e um Contato")](imagens-readme/Diagramas%20de%20Sequência%20-%20Busca%20e%20Delete%20de%20Contatos.jpeg "Diagrama de Sequencia - Busca e Delete e um Contato")
 
 ###### Diagrama de Sequência - Adicionar Novo Contato
-[![Diagrama de Sequencia - Adicionar Contato](https://www.bing.com/images/blob?bcid=TjH9iVXG-PsCidLRRGHWI66YnLnQ.....wQ "Diagrama de Sequencia - Adicionar Contato")](http://https://www.bing.com/images/blob?bcid=TjH9iVXG-PsCidLRRGHWI66YnLnQ.....wQ "Diagrama de Sequencia - Adicionar Contato")
+[![Diagrama de Sequencia - Adicionar Contato](imagens-readme/Diagramas%20de%20Sequência%20-%20Add%20Contato.jpeg "Diagrama de Sequencia - Adicionar Contato")](imagens-readme/Diagramas%20de%20Sequência%20-%20Add%20Contato.jpeg "Diagrama de Sequencia - Adicionar Contato")
 
 ###### Diagrama de Sequência - Registro de Usuário
-[![Diagrama de Sequencia - Registro de Usuario](https://www.bing.com/images/blob?bcid=TjqUoRfqhfsCidLRRGHWI66YnLnQ.....3w "Diagrama de Sequencia - Registro de Usuario")](http://https://www.bing.com/images/blob?bcid=TjqUoRfqhfsCidLRRGHWI66YnLnQ.....3w "Diagrama de Sequencia - Registro de Usuario")
+[![Diagrama de Sequencia - Registro de Usuario](imagens-readme/Diagramas%20de%20Sequência%20-%20Registro.jpeg "Diagrama de Sequencia - Registro de Usuario")](imagens-readme/Diagramas%20de%20Sequência%20-%20Registro.jpeg "Diagrama de Sequencia - Registro de Usuario")
 
 ###### c. Elaborar diagramas de atividade. Elabore, no mínimo, os seguintes diagramas de atividades:
 - [x] Listagem de um dado contato
 - [x] Mapa de navegação de telas
 
-[![Diagrama de Atividade - Listagem de Contato](https://www.bing.com/images/blob?bcid=Tr5mi5zR.PsCidLRRGHWI66YnLnQ.....yE "Diagrama de Atividade - Listagem de Contato")](http://https://www.bing.com/images/blob?bcid=Tr5mi5zR.PsCidLRRGHWI66YnLnQ.....yE "Diagrama de Atividade - Listagem de Contato")
+[![Diagrama de Atividade - Listagem de Contato](imagens-readme/Diagrama%20de%20Atividade%20-%20Busca%20de%20Contato.png "Diagrama de Atividade - Listagem de Contato")](imagens-readme/Diagrama%20de%20Atividade%20-%20Busca%20de%20Contato.png "Diagrama de Atividade - Listagem de Contato")
 
 ###### Diagrama de Atividade - Mapa de Navegação de Telas
-[![Diagrama de Atividade - Mapa de Navegação de Telas](https://www.bing.com/images/blob?bcid=Tkspth98avsCidLRRGHWI66YnLnQ......s "Diagrama de Atividade - Mapa de Navegação de Telas")](http://https://www.bing.com/images/blob?bcid=Tkspth98avsCidLRRGHWI66YnLnQ......s "Diagrama de Atividade - Mapa de Navegação de Telas")
+[![Diagrama de Atividade - Mapa de Navegação de Telas](imagens-readme/Diagrama%20de%20Atividade%20-%20Navegação%20de%20Telas.png "Diagrama de Atividade - Mapa de Navegação de Telas")](imagens-readme/Diagrama%20de%20Atividade%20-%20Navegação%20de%20Telas.png "Diagrama de Atividade - Mapa de Navegação de Telas")
 
 ###### d. Elaborar os diagramas de classe do sistema.
 
 > A seguir se encontra o digrama se classes do nosso sistema, foi a partir dele, e dos outros diagramas, que desenvolvemos o nosso projeto. A classe Usuário e a classe Contato se associam mutualmente, já as classes Grupo e Contato têm uma associação unilateral, pois somente a classe Grupo se associa a classe Contato.
 
-[![Diagrama de Classes Sistema Agenda](https://www.bing.com/images/blob?bcid=ToFDe1x9z.sCidLRRGHWI66YnLnQ.....50 "Diagrama de Classes Sistema Agenda")](http://https://www.bing.com/images/blob?bcid=ToFDe1x9z.sCidLRRGHWI66YnLnQ.....50 "Diagrama de Classes Sistema Agenda")
+[![Diagrama de Classes Sistema Agenda](imagens-readme/Diagrama%20de%20Classes%20Agenda.png "Diagrama de Classes Sistema Agenda")](imagens-readme/Diagrama%20de%20Classes%20Agenda.png "Diagrama de Classes Sistema Agenda")
 
 ###### e. Elaborar os diagramas de estado de um objeto Conta (Account)
-[![Diagrama de Estado - Objeto Conta](https://www.bing.com/images/blob?bcid=Tr8bDJ0JT.sCqxcxoNWLuD9SqbotqVTdP6Q "Diagrama de Estado - Objeto Conta")](http://https://www.bing.com/images/blob?bcid=Tr8bDJ0JT.sCqxcxoNWLuD9SqbotqVTdP6Q "Diagrama de Estado - Objeto Conta")
+[![Diagrama de Estado - Objeto Conta](imagens-readme/Diagrama%20de%20Estados%20-%20Objeto%20Conta.png "Diagrama de Estado - Objeto Conta")](imagens-readme/Diagrama%20de%20Estados%20-%20Objeto%20Conta.png "Diagrama de Estado - Objeto Conta")
 
 ###### f. Explicitar a arquitetura escolhida. Use, para tal, diagramas de componentes e/ou de pacotes.
 
@@ -153,8 +161,8 @@ Ainda que existam diferentes formas de MVC, o controle de fluxo geralmente funci
 4. Algumas implementações de View utilizam o Model para gerar uma interface apropriada (por exemplo, mostrando na tela os dados que foram alterados juntamente com uma confirmação). O View obtém seus próprios dados do Model. O Model não toma conhecimento direto da View.
 5. A interface do usuário espera por próximas interações, que iniciarão o ciclo novamente.
 
-[![Diagrama de Pacotes - Arquitetura MVC](https://www.bing.com/images/blob?bcid=TqV4nquOmfsCqxcxoNWLuD9SqbotqVTdP2I "Diagrama de Pacotes - Arquitetura MVC")](http://https://www.bing.com/images/blob?bcid=TqV4nquOmfsCqxcxoNWLuD9SqbotqVTdP2I "Diagrama de Pacotes - Arquitetura MVC")
+[![Diagrama de Pacotes - Arquitetura MVC](imagens-readme/Diagrama%20de%20Pacotes%20-%20MVC.png "Diagrama de Pacotes - Arquitetura MVC")](imagens-readme/Diagrama%20de%20Pacotes%20-%20MVC.png "Diagrama de Pacotes - Arquitetura MVC")
 
 ###### g. Elaborar os diagramas de implantação.
 
-[![Diagrama de Implementação](https://www.bing.com/images/blob?bcid=ToWmVe2YtvsCidLRRGHWI66YnLnQ......w "Diagrama de Implementação")](http://https://www.bing.com/images/blob?bcid=ToWmVe2YtvsCidLRRGHWI66YnLnQ......w "Diagrama de Implementação")
+[![Diagrama de Implementação](imagens-readme/Diagram%20de%20Implementação.jpeg "Diagrama de Implementação")](imagens-readme/Diagram%20de%20Implementação.jpeg "Diagrama de Implementação")
