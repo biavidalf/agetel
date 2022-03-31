@@ -1,48 +1,30 @@
 {% extends 'base.html' %}
 
-{% block title %}Editar | {{super()}} {% endblock %}
+{% block title %}Editar Contato | {{super()}} {% endblock %}
 
 {% block content %}
+<div id="main-content">
+    <div id="add-contato">
+        <span class="titulo">
+            Editar Contato
+        </span>
+        <!-- Formulário para adicionar contatos -->
+        <form action="" method="POST" enctype="multipart/form-data" class="form-padrao">
+            {{ form.csrf_token }}
+            <h3>Informações</h3>
+            {{ form.nome(type="text", placeholder="Nome Completo", value=contato_atual.nome, class="input-text") }}
+            {{ form.email(type="text", placeholder="E-mail", value=contato_atual.email, class="input-text") }}
+            {{ form.telefone(type="text", placeholder="Número", value=contato_atual.telefone, class="input-text") }}
+            {{ form.cidade(type="text", placeholder="Cidade", value=contato_atual.cidade, class="input-text") }}
+            {{ form.profissao(type="text", placeholder="Profissão", value=contato_atual.profissao, class="input-text") }}
+            {{ form.grupo(class="select-field") }}
+            <div class="foto-perfil">
+              <div class="btn-foto-perfil">Foto do Perfil</div>
+                {{ form.image }}
+            </div>
 
-    <div class="individual-contact">
-                <div class="panel">
-                    <div class="panel-body p-t-10">
-
-                        <div class="media-main">
-                            <a class="pull-left" href="#">
-                                <img class="thumb-lg img-circle bx-s" src="{{ contato_atual.image }}" alt="">
-                            </a>
-                            <form action="" method="POST" enctype="multipart/form-data">
-                                {{ form.csrf_token }}
-                            <div class="pull-right btn-group-sm">
-                                <button type="submit" class="btn btn-success tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Salvar">
-                                    <i class="fa fa-save"></i>
-                                </button>
-                                <a href="{{ url_for('ver_contato', idc=contato_atual.id) }}" class="btn btn-danger tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Cancelar">
-                                    <i class="fa fa-close"></i>
-                                </a>
-                            </div>
-
-                                <div class="info">
-                                    <h4>{{ contato_atual.nome }}</h4>
-                                    <p class="text-muted">Nome: {{ contato_atual.nome }}</p>
-                                        {{ form.nome }}
-                                    <p class="text-muted">Telefone: {{ contato_atual.telefone }}</p>
-                                        {{ form.telefone }}
-                                    <p class="text-muted">E-mail: {{ contato_atual.email }}</p>
-                                        {{ form.email }}
-                                    <p class="text-muted">Cidade: {{ contato_atual.cidade }}</p>
-                                        {{ form.cidade }}
-                                    <p class="text-muted">Profissão: {{ contato_atual.profissao }}</p>
-                                        {{ form.profissao }}
-                                    <p class="text-muted">Grupo: </p>{{ form.grupo }}
-                                    <p class="text-muted">Foto: </p>{{ form.image }}
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
+            <button type="submit" class="botao-form">EDITAR</button>
+        </form>
     </div>
-
+</div>
 {% endblock %}

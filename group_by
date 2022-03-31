@@ -1,3 +1,0 @@
-SELECT SUM(produtos.valor_unitario*itens.quantidade) AS total, clientes.username FROM bbcs.carrinho, bbcs.clientes, bbcs.itens, bbcs.produtos
-WHERE (carrinho.id=itens.carrinho_id) AND (itens.produto_id=produtos.id) AND (carrinho.cliente_id=clientes.id)
-GROUP BY clientes.id

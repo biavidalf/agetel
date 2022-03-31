@@ -3,16 +3,21 @@
 {% block title %}Editar Grupo | {{super()}} {% endblock %}
 
 {% block content %}
-  <form style="margin: 20px auto" action="" method="POST" class="divform" enctype="multipart/form-data">
-      {{ form.csrf_token }}
+<div id="main-content">
+    <div id="add-contato">
+        <span class="titulo">
+            Editar Grupo
+        </span>
+        <!-- Formulário para adicionar contatos -->
+        <form action="" class="form-padrao" method="POST" enctype="multipart/form-data">
+            <h3>Informações</h3>
+            {{ form.csrf_token }}
+            {{
+                form.grupo(class="input-text", placeholder="Nome do Grupo", value=grupo.nome)
+            }}
 
-    <h2 class="titulo">Editar Grupo</h2>
-      <label>Nome: {{ grupo.nome }}</label>
-      {{
-        form.grupo(class="campotexto")
-      }}
-
-      <button class="botoes" type="submit">Editar</button>
-
-  </form>
+            <button type="submit" class="botao-form">EDITAR</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

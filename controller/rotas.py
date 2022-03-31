@@ -43,7 +43,7 @@ def index():
     # Checando formulario de busca
     if form.validate_on_submit():
         resultado = f"%{form.busca.data}%"
-        contatos = Contato.query.filter(Contato.nome.like(resultado), Contato.usuario_id == current_user.id, grupo_id==form_gp.grupo.data).all()
+        contatos = Contato.query.filter(Contato.nome.like(resultado), Contato.usuario_id == current_user.id).all()
 
         # Checando se a busca encontrou algum contato
         if len(contatos) == 0:
@@ -71,16 +71,10 @@ def index():
 """
 
 
-@app.route('/grupos')
+@app.route('/grupos', methods=['GET', 'POST'])
 @login_required
 def grupos():
     grupos = Grupo.query.filter_by(usuario_id=current_user.id)
-    return render_template('grupos.html', grupos=grupos)
-
-
-@app.route('/add_grupo', methods=['GET', 'POST'])
-@login_required
-def add_grupo():
     form = NewGrupo()
 
     if form.validate_on_submit():
@@ -92,7 +86,7 @@ def add_grupo():
         except:
             flash('Grupo já cadastrado')
         return redirect(url_for('grupos'))
-    return render_template('add_grupo.html', form=form)
+    return render_template('grupos.html', grupos=grupos, form=form)
 
 
 @app.route('/att_grupo/<idg>', methods=['GET', 'POST'])
@@ -172,8 +166,12 @@ def add_contato():
 def att_contato(idc):
     form = ContatoForm()
     contato_atual = Contato.query.filter_by(id=idc).first()
+    grp_atual_id = contato_atual.grupo_id
+    grupo_atual = Grupo.query.filter_by(id=grp_atual_id).first()
+    form.grupo.choices = [(row.id, row.nome) for row in Grupo.query.filter_by(usuario_id=current_user.id)]
 
     if form.validate_on_submit():
+        print('chegou')
         contato_atual.nome = form.nome.data
         contato_atual.profissao = form.profissao.data
         contato_atual.email = form.email.data
@@ -185,11 +183,6 @@ def att_contato(idc):
         contato_atual.image = photos.url(photos.save(form.image.data))
 
         db.session.commit()
-
         return redirect(url_for('index'))
 
-    return render_template('editar_contato.html', form=form, contato_atual=contato_atual)
-
-
-
-
+    return render_template('editar_contato.html', form=form, contato_atual=contato_atual, grupo_atual=grupo_atual.nome)

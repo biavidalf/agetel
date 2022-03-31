@@ -17,6 +17,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+}
 body{
     font-family: var(--font);
     background-color: var(--body-bg);
@@ -25,8 +28,8 @@ body{
 .menu {
     visibility: hidden;
     position: relative;
-    top: 75px;
-    right: 37px;
+    top: 100px;
+    right: 48px;
     background-color: white;
     width: 140px;
     padding: 20px auto;
@@ -112,13 +115,13 @@ nav span{
     margin: 4px 35px;
 
 }
-#index .filtro select{
+#index .filtro .filtro-select{
     float: right;
     height: 30px;
     width: 130px;
     padding: 0 10px;
     font-size: 0.9em;
-    margin: 5px 0;
+    margin: 5px 20px;
     color: var(--lighter-bg);
 }
 #index .fa-filter{
@@ -128,16 +131,21 @@ nav span{
     margin: 5px 35px 5px 10px;
     cursor: pointer;
 }
-#index .w-6{
+#index .filtro button{
     float: right;
+    background-color: transparent;
+    border: none;
     width: 30px;
     color: var(--orangee);
-    margin: 5px 35px 5px 10px;
     cursor: pointer;
+    display: inline;
+    margin-right: 30px;
+    margin-top: 5px;
 }
 
+
 /* ===== BARRA DE PESQUISA ===== */
-#index .pesquisa input[type="search"]{
+#index .pesquisa .pesquisa-input{
     width: 400px;
     display: block;
     height: 6vh;
@@ -147,7 +155,7 @@ nav span{
     padding-left: 48px;
     box-shadow: rgb(0, 0, 0) 0px 6px 15px;
 }
-#index .pesquisa input[type="search"]:focus{
+#index .pesquisa .pesquisa-input:focus{
     outline: 2px solid var(--orangee);
   }
 #index .pesquisa input::placeholder{
@@ -157,9 +165,13 @@ nav span{
     position: relative;
     font-size: 1.4em;
     color: var(--orangee);
-    left: 286px;
-    bottom: 54px;
+    left: 293px;
+    bottom: 53px;
     cursor: pointer;
+}
+#index .pesquisa button{
+    background-color: transparent;
+    border: none;
 }
 
 /* ===== LISTAGEM DE CONTATOS ===== */
@@ -167,7 +179,7 @@ nav span{
     width: 85%;
     margin: -18px auto 0 auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
 }
@@ -175,7 +187,7 @@ nav span{
     background-color: white;
     width: 40%;
     height: 20vh;
-    margin-bottom: 30px;
+    margin: 5px 0 30px 30px;
     border-radius: 6px;
     box-shadow: rgb(22, 22, 22) 0px 6px 15px;
 }
@@ -193,17 +205,21 @@ nav span{
     margin-top: 20px;
     width: 70%;
 }
-#contatos .name-edit-delete span{
+#contatos .name-edit-delete a span{
     float: left;
     color: var(--nav-bg);
     font-weight: 600;
     font-size: 1.5em;
 }
-#contatos .name-edit-delete a{
+#contatos .name-edit-delete a.icones{
     float: right;
     color: var(--body-bg);
     margin-right: 7px;
     font-size: 1.2em;
+    font-weight: 600;
+}
+#contatos .name-edit-delete .fa-trash{
+    margin-right: 6px;
 }
 #contatos ul.infos{
     display: inline;
@@ -238,7 +254,7 @@ nav span{
     margin: 0 auto;
     margin-top: 60px;
 }
-#add-contato span.titulo, #criar-grupo span.titulo, #lista-grupos span.titulo{
+#add-contato span.titulo, #criar-grupo span.titulo, #lista-grupos span.titulo, #ver-contato span.titulo{
     display: block;
     border-bottom: 2px solid var(--orangee);
     height: 6vh;
@@ -249,7 +265,7 @@ nav span{
     margin: -30px auto 25px auto;
     width: 100%;
 }
-#add-contato .form-padrao{
+#add-contato .form-padrao, #ver-contato .form-padrao{
     width: 50%;
     margin: 0 auto;
     background-color: #4D4C4C;
@@ -257,7 +273,7 @@ nav span{
     border-radius: 5px;
     box-shadow: rgb(22, 22, 22) 0px 6px 15px;
 }
-#add-contato .form-padrao .input-text{
+#add-contato .form-padrao .input-text, #ver-contato .form-padrao .input-text{
     display: block;
     margin: 15px auto;
     padding: 12px 14px;
@@ -266,12 +282,12 @@ nav span{
     border-bottom: 2px solid #346751;
     color: white;
 }
-#add-contato .form-padrao .input-text:focus{
+#add-contato .form-padrao .input-text:focus, #ver-contato .form-padrao .input-text:focus{
     outline: 2px solid var(--nav-bg);
     border: none;
     border-radius: 5px;
 }
-#add-contato .form-padrao .botao-form{
+#add-contato .form-padrao .botao-form, #ver-contato .form-padrao .botao-form{
     display: block;
     margin: 20px auto 5px auto;
     border: none;
@@ -281,17 +297,105 @@ nav span{
     padding: 13px 17px;
     border-radius: 6px;
 }
-#add-contato .form-padrao .botao-form:hover{
+#add-contato .form-padrao .botao-form:hover, #ver-contato .form-padrao .botao-form:hover{
     color: white;
     background-color: #C84B31;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-#add-contato h3{
+#add-contato h3, #ver-contato h3{
     text-align: center;
     color: white;
     letter-spacing: 1px;
     font-weight: 400;
+}
+#add-contato .select-field, #add-contato .select-field2{
+    display: block;
+    margin: 15px auto;
+    padding: 12px 14px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #346751;
+    color: white;
+    width: 89%;
+}
+#add-contato .select-field2{
+    color: #7A7676;
+}
+#add-contato .select-field:focus{
+    outline: 2px solid var(--nav-bg);
+    border: none;
+    border-radius: 5px;
+}
+#add-contato option{
+    color: black;
+}
+.foto-perfil {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.foto-perfil input[type=file] {
+  left: 0;
+  top: 0;
+  opacity: 0;
+  position: absolute;
+  font-size: 90px;
+}
+.btn-foto-perfil, .btn-foto-perfil2{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #346751;
+    color: white;
+    padding: 10px 19px;
+    display: block;
+    width: 200px;
+    margin-left: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+.btn-foto-perfil2{
+    color: #7A7676;
+}
+
+
+
+/*
+    ==============================================================
+                    PÁGINA INDIVIDUAL DO CONTATO
+    ==============================================================
+*/
+#ver-contato{
+    width: 65%;
+    margin: 60px auto 0 auto;
+}
+#ver-contato img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: -70px auto 0 auto;
+}
+#ver-contato div.form-padrao{
+    margin-top: 70px;
+}
+#ver-contato h3{
+    font-size: 1.7em;
+    margin-top: 5px;
+}
+#ver-contato .form-padrao span{
+    display: block;
+    color: var(--lighter-gray);
+    text-align: center;
+    margin-top: 10px;
+}
+#ver-contato .form-padrao h4{
+    display: block;
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 1px;
+    font-size: 1.2em;
 }
 
 /* 

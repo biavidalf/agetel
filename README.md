@@ -2,16 +2,17 @@
 ###  Agenda de Contatos
 ####  Equipe: Beatriz Vidal Freire, Evellyn Gisely de Castro, Nilton Luan Guedes Barros e Paulo Victor Souza Rodrigues
 
-*Table of Contents*
+## Sumário
 
-[TOCM]
+* [Documentação](#1.-Documentação)
+* [Telas do Sistema](#2.-Telas-do-Sistema)
+* [UML](#3.-UML)
+* [Autores](#4.-Autores)
 
-[TOC]
-
-##### 1) Documentação
+##### 1. Documentação
 ######  Projeto
 > Nome: Agenda Telefonica Virtual
-Versão: 1.57
+Versão: 2.0
 [Link do Código](https://github.com/biavidalf/biavidalf.github.io)
 
 ###### Editores UML usados
@@ -46,7 +47,7 @@ Versão: 1.57
 [Tutoral diagrama de pacotes](https://www.lucidchart.com/pages/pt/diagrama-de-pacotes-uml/#section_2)
 [Tutorial diagrama de estados](https://www.lucidchart.com/pages/uml-state-machine-diagram)
 
-#####  2) Telas do Sistema
+#####  2. Telas do Sistema
 
 ###### Tela Login
 
@@ -58,7 +59,7 @@ Versão: 1.57
 
 ###### Tela Inicial (contatos)
 
-[![Tela Inicial](imagens-readme/Telas-PáginaInicial.png "Tela Inicial")](imagens-readme/Telas-PáginaInicial.png "Tela Inicial")
+[![Tela Inicial](imagens-readme/PáginaInicial.png "Tela Inicial")](imagens-readme/Telas-PáginaInicial.png "Tela Inicial")
 
 ###### Tela Edição de Contato
 
@@ -80,7 +81,12 @@ Versão: 1.57
 
 [![Tela Filtro de Grupos](imagens-readme/Telas-FiltrodeGrupos.png "Tela Filtro de Grupos")](imagens-readme/Telas-FiltrodeGrupos.png "Tela Filtro de Grupos")
 
-##### 3) UML:
+###### Tela Filtro de Grupos
+
+[![Tela Grupos](imagens-readme/Telas-Grupos.png "Tela de Grupos")](imagens-readme/Telas-Grupos.png "Tela Grupos")
+
+
+##### 3. UML
 ###### a. Desenvolver os casos de uso do sistema.
 
 [![Casos de Uso do Sistema](imagens-readme/Diagrama%20de%20Caso%20de%20Uso.jpeg "Casos de Uso do Sistema")](imagens-readme/Diagrama%20de%20Caso%20de%20Uso.jpeg "Casos de Uso do Sistema")
@@ -166,3 +172,11 @@ Ainda que existam diferentes formas de MVC, o controle de fluxo geralmente funci
 ###### g. Elaborar os diagramas de implantação.
 
 [![Diagrama de Implementação](imagens-readme/Diagram%20de%20Implementação.jpeg "Diagrama de Implementação")](imagens-readme/Diagram%20de%20Implementação.jpeg "Diagrama de Implementação")
+
+
+##### 3. Autores
+* Autores do READ.ME + UML: Beatriz Vidal Freire, Evellyn Gisely de Castro, Nilton Luan Guedes Barros e Paulo Victor Souza Rodrigues
+> Autor do sistema e do design (Python/Flask, HTML e CSS): Beatriz Vidal Freire
+> <br>Entre em contanto:
+> [Linkedin](https://www.linkedin.com/in/beatriz-vidal-a2b114200/) |
+> [Instagram](instagram.com/bvidalf)

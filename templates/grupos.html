@@ -3,47 +3,40 @@
 {% block title %}Grupos | {{super()}} {% endblock %}
 
 {% block content %}
+<div id="main-content">
+    <div id="criar-grupo">
+        <span class="titulo">
+            Criar Grupo
+        </span>
+        <!-- Formulário para adicionar contatos -->
+        <form action="" class="form-grupo" method="POST" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            {{
+                form.grupo(class="input-text", placeholder="Nome do Grupo")
+            }}
 
-    <div class="container bootstrap snippets bootdey">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default" style=" width: 200px; margin: 0 auto; margin-bottom:20px">
-                    <div class="panel-body p-t-0" style="text-align: center;">
+            <button type="submit" class="botao-form">CRIAR</button>
+        </form>
+    </div>
 
-                          <div class="create">
-
-                              <h4><a href="{{ 'add_grupo' }}">Criar grupo</a></h4>
-
-                          </div>
-
-                </div>
-            </div>
-        </div>
-
-    <div class="container bootstrap snippets bootdey">
-        <div class="row">
+    <div id="lista-grupos">
+        <span class="titulo">
+            Seus Grupos
+        </span>
+        <!-- Formulário para adicionar contatos -->
+        <div id="grupos">
             {% for grupo in grupos %}
-            <div class="col-sm-6">
-                <div class="panel">
-                    <div class="panel-body p-t-10">
-                        <div class="media-main">
-
-                            <div class="pull-right btn-group-sm">
-                                <a href="{{ url_for('att_grupo', idg=grupo.id) }}" class="btn btn-success tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Editar">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-                                <a href="{{ url_for('deletar_grupo', idg=grupo.id) }}" class="btn btn-danger tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Deletar">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </div>
-
-                            <h4>Grupo: <span class="info">{{ grupo.nome }}</span></h4>
-                        </div>
-                    </div>
+            <div class="grupo">
+                <span class="nome-grp">
+                    {{ grupo.nome }}
+                </span>
+                <div class="icons-grp">
+                    <a href="{{ url_for('att_grupo', idg=grupo.id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="{{ url_for('deletar_grupo', idg=grupo.id) }}"><i class="fa-solid fa-trash"></i></a>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
-
+</div>
 {% endblock %}

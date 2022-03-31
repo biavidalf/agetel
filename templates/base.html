@@ -1,58 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>{% block title %}Agenda Telefônica Virtual{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<script src="https://kit.fontawesome.com/df07cb0f03.js" crossorigin="anonymous"></script>
+        <!-- Link CSS -->
+        <link href="../static/css/estilo.css" rel="stylesheet">
 
-	<link href="../static/css/newcss.css" rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet">
+        <!-- Link fontes -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;400;600&display=swap');
+        </style>
+
+        <!-- Link icones -->
+        <script src="https://kit.fontawesome.com/cb18e7956b.js" crossorigin="anonymous"></script>
+
+        <!-- Título -->
+        <title>{% block title %}AGETEL ONLINE{% endblock %}</title>
 </head>
 
 <body style="margin: 0 auto;">
-    <header id="header" style="margin: 0 auto;"><!--header-->
-		<div class="header-middle"><!--header-middle-->
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 clearfix">
-						<div class="shop-menu clearfix pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="{{ url_for('index') }}"><i class="fa fa-crosshairs"></i>Página Inicial</a></li>
-								{% if call_or_get(current_user.is_authenticated) %}
-									<li><a href="{{ url_for('user.logout') }}"><i class="fas fa-sign-out-alt"></i>{%trans%}Logout{%endtrans%}</a></li>
-								{% else %}
-									<li><a href="{{ url_for('user.login') }}"><i class="fas fa-lock"></i>Login</a></li>
-									<li><a href="{{ url_for('user.register') }}"><i class="fas fa-user"></i>Register</a></li>
-								{% endif %}
-                                <li><a href="{{ url_for('add_contato') }}"><i class="fas fa-user"></i>Adicionar Contato</a></li>
-								<li><a href="{{ url_for('grupos') }}"><i class="fas fa-user"></i>Grupos</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header-middle-->
-		<div class="header-bottom"><!--header-bottom-->
-
-		</div><!--/header-bottom-->
-	</header><!--/header-->
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-
+    <nav>
+        <a href="{{ url_for('index') }}"> <i class="fa-regular fa-address-book"></i> </a>
+        <a href="{{ url_for('index') }}"> <span class="logo">AGETEL ONLINE</span>    </a>
+        <button class="selecionado">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAABmJLR0QA/wD/AP+gvaeTAAAFeklEQVRYhe2YS2wbVRSGz2T8SJ3Gbkwd2iYlQgoUElekRRWbRBVIrUBdsEBIIIRAQuqqrFoWPCoWbBFSJZBYIRAgYNGCKvGWGnU8M57YqR91kB+xE09s2fE4fsXOTD0ez2FBLLmJ0yTjadjkW43n3nP+X+de37n3Auyzzz777LOPzhB6JkNEs9frvSSK4nM9PT12VVWLFotl5syZM58TBFHXU6trMpmMhabpG6lUqo4dWFpaqtM0fR0Re/XQ67rSfr//CYPBQDudzkEAgEajAalUShJFUbJYLAeOHz9+wGg0AgBAKBTKNZvNqVOnTs13q6sZQRAOzs3N5RERZVlGj8czFwqFzrX3CYVC5zwez1yj0UBExFAoJCwvL/f9X56BZdm/ERHr9ToyDPPVNn2/lmUZEREZhvlzrzzex/Ly8qAgCAoiIsdx3p3EcBx3BxFREAQlm806tGr3aA1MJBIfOBwOslarYX9//9s7ibFarW/VajV0OBzk4uLi+1q1NZtWVfU0AADP88Xx8fF/dhIzNjY2x/N8CQBAUZRntWprNk2S5CEAAFEUV3cTJ4piBQDAYDAMaNXWbFpRlBoAgMlksuwmzmQy9a3HV7VqazZNEMQ8AMDQ0JCjXC7vqGrlcnlgeHj48PrPvV+rw+HwyVqtpq4vYb/sJIZl2ZuIiNVqVY3FYk8/bI8d4TguiIhYLBZVlmUvPqgvy7IXS6WSur5EBvbK4yZ8Pt/Y4uKitG68yTDMD4hobu+DiGaapn8sFotNRMSFhQVpdnb2qW50u957MAzzytDQ0PcjIyNmAIB0Oi1ns9mULMslk8k0cPTo0ceGh4eNAAA8z9dTqdTrU1NTP3er2zU+n+8Zj8cTlSSp0yYPJUlCr9cbnp2dPamHnq776UAgcL5arV4yGo1PGgyGvkajUWs0GjGr1frFxMTEX3pq7bMX6DY9wuHw2ZWVlVcRcZwkSRtJkr2yLNcQcYUkSd7hcHx54sSJoF56molEIo+7XK7fwuFwpbXJ3wpJkjASiVRu3br1Wbe6miotCMLB+fn5G6Ojoy8MDg6SrfeFQkHN5XKrkiStKooimUymfrPZbDly5IjVbrf3AAAEg0FhYmLi0fZ8iGhiGOZab2/vSzab7TBJkj1ra2tr5XI5ODAwcNnpdHY3QhRFvRaNRldbFSwUCk232x3gOO4yInbcPJVKpUNut/tjiqKmp6en32hvYxjmQjQarWw1QoVCoUnT9LeaDd++ffujfD7fbA03x3F3gsGgU2s+lmVfzGazD55XiKgoCrIse1OL4Q+r1aqK+N+VAEVR72o1CwCAiMZIJLKpwoIgKMlkctNXShRF3G5/cx8URb3SqnA8Hl9jWfZsN4YBAFwu17VOVfV4PFd5nh9onT/b8fv96R0lR0RzOBwuIyKmUimZ47jnuzUMAOD1euOdTAcCgTcBAHiev7exrVKpqOl0etiwXXKapr+bnJy0ybIMyWTy6tTU1LQepvv7+wdbz7lcrsnz/KdGozHf19f3OwBAuVy+lM/nHzGbzVecTudhAACr1UrE4/EL2yZ3uVzXm80mzszMePQw2yIej6+1KhiLxWq4xZWZ2+2+015tr9f73rbJEZFIJpOnEVHz0awTgUAg124mk8k0eJ6/d/fu3ZcBAGKx2ArP8/faP1qKomA0Gp3U08euoCjqj05z2ufzvQMAsLS0tOkyM5FI1BCR0LV6u8Fms10pFArqxvcEQXzidrs9x44dM21sy2azvxIEgXvjcAtomv5GUTatbB0JhUJCJpPZ1XXFQ4Nl2ZuiKG5ruNtzpe6wLHvR7/enV1dX1fY/XSKRqLlcrp82VljX41a3LCwsjFQqlfOyLNvtdjs1OjrKdZrD/wL1uavGOK0jfAAAAABJRU5ErkJggg==">
+        </button>
+            <div class="menu">
+                <ul>
+                    {% if call_or_get(current_user.is_authenticated) %}
+                        <li>
+                            <a href="{{ url_for('add_contato') }}">
+                                <button onclick="">
+                                    Add Contato
+                                </button>
+                            </a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="{{ url_for('grupos') }}">
+                                <button onclick="">
+                                    Grupos
+                                </button>
+                            </a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="{{ url_for('user.logout') }}">
+                                <button onclick="">
+                                    Sair da Conta
+                                </button>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{{ url_for('user.login') }}">
+                                <button onclick="">
+                                    Login
+                                </button>
+                            </a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="{{ url_for('user.register') }}">
+                                <button onclick="">
+                                    Cadastro
+                                </button>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
     {% block content %}
 
 	{% endblock %}
-
-    <script type="text/javascript">
-    $(function(){
-     $("a[data-toggle='tooltip']").tooltip();
-    });
-
-    </script>
 </body>
 </html>

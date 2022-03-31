@@ -3,42 +3,35 @@
 {% block title %}Adicionar | {{super()}} {% endblock %}
 
 {% block content %}
-  <form style="margin: 20px auto" action="" method="POST" class="divform" enctype="multipart/form-data">
-      {{ form.csrf_token }}
+<div id="main-content">
+    <div id="add-contato">
+        <span class="titulo">
+            Adicionar Contatos
+        </span>
+        <!-- Formulário para adicionar contatos -->
+        <form action="" class="form-padrao" method="POST" enctype="multipart/form-data">
+            <h3>Informações</h3>
+            {{ form.csrf_token }}
 
-    <h2 class="titulo">Adicionar Contato</h2>
-      <label>Nome</label>
-      {{
-        form.nome(class="campotexto")
-      }}
+            {{ form.nome(class="campotexto", class="input-text", placeholder="Nome Completo") }}
 
-      <label>Profissão</label>
-      {{
-        form.profissao(class="campotexto")
-      }}
+            {{ form.telefone(class="campotexto", class="input-text", placeholder="Telefone") }}
 
-      <label>Email</label>
-      {{
-        form.email(class="campotexto")
-      }}
+            {{ form.email(class="campotexto", class="input-text", placeholder="E-mail") }}
 
-      <label>Telefone</label>
-      {{
-        form.telefone(class="campotexto")
-      }}
+            {{ form.cidade(class="campotexto", class="input-text", placeholder="Cidade") }}
 
-      <label>Cidade</label>
-      {{
-        form.cidade(class="campotexto")
-      }}
-      <label>Foto</label>
-      {{
-        form.image(class="campotexto")
-      }}
-      <label>Grupo</label>
+            {{ form.profissao(class="campotexto", class="input-text", placeholder="Profissao") }}
 
-      {{ form.grupo }}
-      <button class="botoes" type="submit">Adicionar</button>
+            {{ form.grupo(class="select-field2") }}
 
-  </form>
+            <div class="foto-perfil">
+              <button class="btn-foto-perfil2">Foto do Perfil</button>
+                {{ form.image }}
+            </div>
+
+            <button type="submit" class="botao-form">ADICIONAR</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

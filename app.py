@@ -21,7 +21,10 @@ app.config['USER_AFTER_REGISTER_ENDPOINT'] = 'user.login'
 app.config['USER_REQUIRE_RETYPE_PASSWORD'] = False
 app.config['CSRF_ENABLED'] = True
 app.config['USER_ENABLE_EMAIL'] = False
-app.config['USER_APP_NAME'] = 'Agenda'
+app.config['USER_APP_NAME'] = 'AGETEL | Agenda Telefônica'
+app.config['USER_COPYRIGHT_YEAR'] = '2022'
+app.config['USER_CORPORATION_NAME'] = 'Beatriz Vidal Freire'
+app.config['USER_APP_VERSION'] = '2.0'
 
 configure_uploads(app, photos)
 

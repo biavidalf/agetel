@@ -4,34 +4,31 @@
 
 {% block content %}
 
-    <div class="individual-contact">
-                <div class="panel">
-                    <div class="panel-body p-t-10">
+<div id="main-content">
+    <div id="ver-contato">
 
-                        <div class="media-main">
-                            <a class="pull-left" href="#">
-                                <img class="thumb-lg img-circle bx-s" src="{{ contato.image }}" alt="">
-                            </a>
-                            <div class="pull-right btn-group-sm">
-                                <a href="{{ url_for('att_contato', idc=contato.id) }}" class="btn btn-success tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Editar">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-                                <a href="{{ url_for('deletar_contato', idc=contato.id) }}" class="btn btn-danger tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Deletar">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </div>
-                            <div class="info">
-                                <h4> {{ contato.nome }}</h4>
-                                <p class="text-muted">Número de Telefone: {{ contato.telefone }}</p>
-                                <p class="text-muted">E-mail: {{ contato.email }}</p>
-                                <p class="text-muted">Cidade: {{ contato.cidade }}</p>
-                                <p class="text-muted">Profissão: {{ contato.profissao }}</p>
-                                <p class="text-muted">Grupo: {{ contato.grupo.nome }}</p>
-                            </div>
-                        </div>
+        <!-- Visualização individual do contato -->
+        <div class="form-padrao">
+            <img src="{{ contato.image }}" alt="">
+            <h3>{{ contato.nome }}</h3>
 
-                    </div>
-                </div>
+            <span>E-mail</span>
+            <h4>{{ contato.email }}</h4>
+
+            <span>Número</span>
+            <h4>{{ contato.telefone }}</h4>
+
+            <span>Cidade</span>
+            <h4>{{ contato.cidade }}</h4>
+
+            <span>Profissão</span>
+            <h4>{{ contato.profissao }}</h4>
+
+            <span>Grupo</span>
+            <h4>{{ contato.grupo.nome }}</h4>
+
+            <a href="{{ url_for('att_contato', idc=contato.id) }}"><button class="botao-form">EDITAR</button></a>
+        </div>
     </div>
-
+</div>
 {% endblock %}
