@@ -181,4 +181,4 @@ Ainda que existam diferentes formas de MVC, o controle de fluxo geralmente funci
 > Autor do sistema e do design (Python/Flask, HTML e CSS): Beatriz Vidal Freire
 > <br>Entre em contanto:
 > [Linkedin](https://www.linkedin.com/in/beatriz-vidal-a2b114200/) |
-> [Instagram](instagram.com/bvidalf)
+> [Instagram](https://www.instagram.com/bvidalf/)
