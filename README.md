@@ -1,15 +1,17 @@
 # Projeto Final de Engenharia de Software
-###  Agenda de Contatos
+###  Agenda Virtual de Contatos
 ####  Equipe: Beatriz Vidal Freire, Evellyn Gisely de Castro, Nilton Luan Guedes Barros e Paulo Victor Souza Rodrigues
+
+> [Clique aqui para ver o video de demonstração do sistema!](https://www.linkedin.com/posts/beatriz-vidal-a2b114200_python-html-css-activity-6915416401314791424-HxG1?utm_source=linkedin_share&utm_medium=member_desktop_web)
 
 ## Sumário
 
-* [Documentação](#1.-Documentação)
-* [Telas do Sistema](#2.-Telas-do-Sistema)
-* [UML](#3.-UML)
-* [Autores](#4.-Autores)
+* [Documentação](#Documentação)
+* [Telas do Sistema](#Telas-do-Sistema)
+* [UML](#UML)
+* [Autores](#Autores)
 
-##### 1. Documentação
+##### Documentação
 ######  Projeto
 > Nome: Agenda Telefonica Virtual
 Versão: 2.0
@@ -47,7 +49,7 @@ Versão: 2.0
 [Tutoral diagrama de pacotes](https://www.lucidchart.com/pages/pt/diagrama-de-pacotes-uml/#section_2)
 [Tutorial diagrama de estados](https://www.lucidchart.com/pages/uml-state-machine-diagram)
 
-#####  2. Telas do Sistema
+##### Telas do Sistema
 
 ###### Tela Login
 
@@ -86,7 +88,7 @@ Versão: 2.0
 [![Tela Grupos](imagens-readme/Telas-Grupos.png "Tela de Grupos")](imagens-readme/Telas-Grupos.png "Tela Grupos")
 
 
-##### 3. UML
+##### UML
 ###### a. Desenvolver os casos de uso do sistema.
 
 [![Casos de Uso do Sistema](imagens-readme/Diagrama%20de%20Caso%20de%20Uso.jpeg "Casos de Uso do Sistema")](imagens-readme/Diagrama%20de%20Caso%20de%20Uso.jpeg "Casos de Uso do Sistema")
@@ -174,7 +176,7 @@ Ainda que existam diferentes formas de MVC, o controle de fluxo geralmente funci
 [![Diagrama de Implementação](imagens-readme/Diagram%20de%20Implementação.jpeg "Diagrama de Implementação")](imagens-readme/Diagram%20de%20Implementação.jpeg "Diagrama de Implementação")
 
 
-##### 3. Autores
+##### Autores
 * Autores do READ.ME + UML: Beatriz Vidal Freire, Evellyn Gisely de Castro, Nilton Luan Guedes Barros e Paulo Victor Souza Rodrigues
 > Autor do sistema e do design (Python/Flask, HTML e CSS): Beatriz Vidal Freire
 > <br>Entre em contanto:
